@@ -12,7 +12,7 @@ import com.twilio.sdk.verbs.Message;
 
 public class TwilioServlet extends HttpServlet {
 
-    public void service(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void service(HttpServletRequest request, HttpServletResponse response, String bodyd) throws IOException {
         String body = request.getParameter("Body");
         String message = "Found Nothing";
         if (body == "hello") {
@@ -33,7 +33,7 @@ public class TwilioServlet extends HttpServlet {
         }
         Example ex = new Example();
 		try {
-			ex.SMS("2018875323", "Hello sent from twilio "+message);
+			ex.SMS("2018875323", "Hello sent from twilio "+message+" "+bodyd);
 		} catch (TwilioRestException e) {
 			e.printStackTrace();
 		}

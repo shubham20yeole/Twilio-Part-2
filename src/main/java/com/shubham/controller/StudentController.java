@@ -143,12 +143,12 @@ public class StudentController {
 
 	@RequestMapping(value="smsservice", method = RequestMethod.GET)
 	public ModelAndView smsservice(@RequestParam(required=false, value="from") String from,
-			@RequestParam(required=false, value="msg") String msg,
+			@RequestParam(required=false, value="Body") String Body,
 			HttpServletRequest request, HttpServletResponse response){
 		
 		TwilioServlet hh = new TwilioServlet();
 		try {
-			hh.service(request, response);
+			hh.service(request, response, Body);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
