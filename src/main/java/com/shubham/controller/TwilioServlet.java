@@ -1,35 +1,43 @@
 package com.shubham.controller;
-
-
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.HashMap;
 
-import com.twilio.twiml.Body;
-import com.twilio.twiml.Message;
-import com.twilio.twiml.MessagingResponse;
-import com.twilio.twiml.TwiMLException;
+import com.twilio.sdk.verbs.TwiMLResponse;
+import com.twilio.sdk.verbs.TwiMLException;
+import com.twilio.sdk.TwilioRestException;
+import com.twilio.sdk.verbs.Message;
 
 public class TwilioServlet extends HttpServlet {
 
-    // service() responds to both GET and POST requests.
-    // You can also use doGet() or doPost()
     public void service(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        Message message = new Message.Builder()
-                .body(new Body("Hello, Mobile Monkey"))
-                .build();
+        String body = request.getParameter("Body");
+        String message = "Found Nothing";
+        if (body == "hello") {
+            // Use a generic message
+            message = "Hi there!";
+        } else if (body == "bye") {
+            // Use the caller's name
+            message = "Goodbye!";
+        }
 
-        MessagingResponse twiml = new MessagingResponse.Builder()
-                .message(message)
-                .build();
-
-        response.setContentType("application/xml");
-
+        // Create a TwiML response and add our friendly message.
+        TwiMLResponse twiml = new TwiMLResponse();
+        Message sms = new Message(message);
         try {
-            response.getWriter().print(twiml.toXml());
+            twiml.append(sms);
         } catch (TwiMLException e) {
             e.printStackTrace();
         }
+        Example ex = new Example();
+		try {
+			ex.SMS("2018875323", "Hello sent from twilio");
+		} catch (TwilioRestException e) {
+			e.printStackTrace();
+		}
+        response.setContentType("application/xml");
+        response.getWriter().print(twiml.toXML());
     }
 }
