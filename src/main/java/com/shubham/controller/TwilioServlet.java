@@ -55,7 +55,7 @@ public class TwilioServlet extends HttpServlet {
     	data.put("c","Future Goal");
     	data.put("5","Following are the names of students enrolled in 5th grade.\n 501 John Cena \n502 Abraham Bond \n503 Noa Capsi. \nPlease reply with the student id." );
     	data.put("6","Following are the names of students enrolled in 6th grade.\n 601 Mich Leriche \n602 David P Perlmutter \n603 Tobias Edstrom. \nPlease reply with the student id." );
-    	data.put("7","Following are the names of students enrolled in 7th grade.\n 701 Dave Bush \n702 Daniel Bastos \n703 Ludmila Lupan. \nPlease reply with the student id.");
+    	data.put("7","Following are the names of students enrolled in 7th grade.\n 701 Dave Bush \n702 Daniel Bostos \n703 Ludmila Lupan. \nPlease reply with the student id.");
     	data.put("501","Please reply us with 4-digit pin. This pin code is required to keep students record confidential. (USE PIN 5011 for testing)");
     	data.put("502","Please reply us with 4-digit pin. This pin code is required to keep students record confidential. (USE PIN 5022 for testing)");
     	data.put("503","Please reply us with 4-digit pin. This pin code is required to keep students record confidential. (USE PIN 5033 for testing)");
@@ -72,7 +72,7 @@ public class TwilioServlet extends HttpServlet {
     	data.put("6022","Mr David P Perlmutter is taking 4 different classes in this year. "+list);
     	data.put("6033","Mr Tobias Edstrom is taking 4 different classes in this year."+list);
     	data.put("7011","Mr Dave Bush is taking 4 different classes in this year. "+list);
-    	data.put("7022","Mr Daniel Bastos is taking 4 different classes in this year."+list);
+    	data.put("7022","Mr Daniel Bostos is taking 4 different classes in this year."+list);
     	data.put("7033","Mr Ludmila Lupan is taking 4 different classes in this year. "+list);
     	data.put("1","He is doing very good in Biology. His GPA in last exam is 3.9/4.0. Techer recommend to concentrate more on Behavioral Biology chapter. ");
     	data.put("2","He is doing fine in Geometry. His GPA in last exam is 3.2/4.0. Teacher recommend concentrate more on Integration sum.");
