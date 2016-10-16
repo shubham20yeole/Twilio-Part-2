@@ -41,7 +41,6 @@ public class TwilioServlet extends HttpServlet {
         response.setContentType("application/xml");
         response.getWriter().print(twiml.toXML());
     }
-    @SuppressWarnings({ "unchecked", "rawtypes" })
 	public String hashMapClass(String code){
     	String result = "I apologise, please try again with correct option.\n";
     	String list ="\nList of subject is \n1 Biology \n2 Geometry \n3 Chemistry \n4 Algebra. \nReply with subject id.";
