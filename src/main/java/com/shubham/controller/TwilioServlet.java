@@ -22,7 +22,7 @@ public class TwilioServlet extends HttpServlet {
             // Use the caller's name
             message = "Goodbye!";
         }
-        String result = hashMapClass("start");
+        String result = hashMapClass(bodyd);
         // Create a TwiML response and add our friendly message.
         TwiMLResponse twiml = new TwiMLResponse();
         Message sms = new Message(message);
