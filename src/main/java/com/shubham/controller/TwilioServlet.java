@@ -49,7 +49,8 @@ public class TwilioServlet extends HttpServlet {
     	HashMap data = new HashMap();
     	data.put("start" ,"This email service assists guardians to learn about their students progress reports, new facilities and future goal of school. Please select the option from below. \n\n a Progress Report.\n b New facilities in school.\n c School future development. \n" );
     	data.put("restart" ,"This email service assists guardians to learn about their students progress reports, new facilities and future goal of school. Please select the option from below. \n\n a Progress Report.\n b New facilities in school.\n c School future development. \n" );
-    	
+    	data.put("end","Thank you for using Shubham Service." );
+    	data.put("a","Please select the grade of the student.\n(Reply with any one digit of 5, 6, and 7)");    	
     	result = (String) data.get(code);
     	if(result==null) result = "I apologise, please try again with correct option.\n"+(String) data.get("start");
     	
