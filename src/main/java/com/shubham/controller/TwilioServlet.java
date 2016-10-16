@@ -44,7 +44,7 @@ public class TwilioServlet extends HttpServlet {
     @SuppressWarnings({ "unchecked", "rawtypes" })
 	public String hashMapClass(String code){
     	String result = "I apologise, please try again with correct option.\n";
-    	String list ="\n\nList of subject is \n1 Biology \n2 Geometry \n3 Chemistry \n4 Algebra. \nReply with subject id.";
+    	String list ="\n\nList of subject is \n1 Biology \n2 Geometry \n3 Chemistry \n4 Algebra. \n\nReply with subject id and we will let you know the students report in that subject..";
 
     	HashMap data = new HashMap();
     	data.put("start" ,"This is the SMS service designed by Shubham Yeole from Pace University Computer Science major. \n\n This SMS service assists guardians of high school students to learn about their children progress reports at school. \n\nIt also inform parents about the new facilities, events and future goals of school. \n\nPlease select the option given below. \n\nA Progress Report.\nB New facilities in school.\nC School future goals.\nD School events. \n" );
@@ -52,8 +52,8 @@ public class TwilioServlet extends HttpServlet {
     	data.put("Restart" ,"This is the SMS service designed by Shubham Yeole from Pace University Computer Science major. \n\n This SMS service assists guardians of high school students to learn about their children progress reports at school. \n\nIt also inform parents about the new facilities, events and future goals of school. \n\nPlease select the option given below. \n\nA Progress Report.\nB New facilities in school.\nC School future goals.\nD School events. \n" );
     	data.put("restart" ,"This is the SMS service designed by Shubham Yeole from Pace University Computer Science major. \n\n This SMS service assists guardians of high school students to learn about their children progress reports at school. \n\nIt also inform parents about the new facilities, events and future goals of school. \n\nPlease select the option given below. \n\nA Progress Report.\nB New facilities in school.\nC School future goals.\nD School events. \n" );
     	data.put("end","Thank you for using Shubham Service." );
-    	data.put("A","Thank you for your response. Please answer couple of questions and we will let you know the progress report of your student. \n\nPlease select the grade of the student.\n(Reply with any one digit of 5, 6, and 7)");
-    	data.put("a","Thank you for your response. Please answer couple of questions and we will let you know the progress report of your student. \n\nPlease select the grade of the student.\n(Reply with any one digit of 5, 6, and 7)");
+    	data.put("A","Thank you for your response. Please answer couple of questions and we will let you know the progress report of your children. \n\nPlease select the grade of the student.\n(Reply with any one digit of 5, 6, and 7)");
+    	data.put("a","Thank you for your response. Please answer couple of questions and we will let you know the progress report of your children. \n\nPlease select the grade of the student.\n(Reply with any one digit of 5, 6, and 7)");
     	data.put("b","You have selected NEW FACILITY option.\n\nOur school is providing 3 new facilities to our students.\n1- Portable laptop to each student.\n2- Library with updated books\n3- School bus\n4- Entertainment hall.\n\nReply restart to start service again or reply with A or B or C charaters to learn about progress report, school new facilities, school future goals and school events respectively.");
     	data.put("B","You have selected NEW FACILITY option.\n\nOur school is providing 3 new facilities to our students.\n1- Portable laptop to each student.\n2- Library with updated books\n3- School bus\n4- Entertainment hall.\n\nReply restart to start service again or reply with A or B or C charaters to learn about progress report, school new facilities, school future goals and school events respectively.");
     	data.put("c","You have selected SCHOOL FUTURE GOAL option.\n\nGOAL 1: 100% of students participate in internships two days a week.\nGOAL 2: Students increase reading level by at least one and a half grade levels.\nGOAL 3: 100% of students present oral exhibitions.\nGOAL 4: 90% of parents attend student exhibitions.\nGOAL 5: By 2017, expand the current XYZ school to serve 200 students.");
@@ -81,11 +81,10 @@ public class TwilioServlet extends HttpServlet {
     	data.put("7011","Mr Dave Bush is taking 4 different classes in this year. "+list);
     	data.put("7022","Mr Daniel Bostos is taking 4 different classes in this year."+list);
     	data.put("7033","Mr Ludmila Lupan is taking 4 different classes in this year. "+list);
-    	data.put("1","He is doing very good in Biology. His GPA in last exam is 3.9/4.0. Techer recommend to concentrate more on Behavioral Biology chapter. ");
-    	data.put("2","He is doing fine in Geometry. His GPA in last exam is 3.2/4.0. Teacher recommend concentrate more on Integration sum.");
-    	data.put("3","He is doing excellent in Chemistry. His GPA in last exam is 4.0/4.0.");
-    	data.put("4","Not so good in Algebra. GPA in last exam is 2.6/4.0. Teacher recommend concentrate more on all chapters before he appear in final exams.");
-    	data.put("5011","c");
+    	data.put("1","He is doing very good in Biology. His GPA in last exam is 3.9/4.0. Techer recommend to concentrate more on Behavioral Biology chapter. "+list);
+    	data.put("2","He is doing fine in Geometry. His GPA in last exam is 3.2/4.0. Teacher recommend concentrate more on Integration sum."+list);
+    	data.put("3","He is doing excellent in Chemistry. His GPA in last exam is 4.0/4.0."+list);
+    	data.put("4","Not so good in Algebra. GPA in last exam is 2.6/4.0. Teacher recommend concentrate more on all chapters before he appear in final exams."+list);
     	result = (String) data.get(code);
     	if(result==null) result = "I apologise, please try again with correct option.\n"+(String) data.get("start");
     	
