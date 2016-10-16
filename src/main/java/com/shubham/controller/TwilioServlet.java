@@ -33,12 +33,8 @@ public class TwilioServlet extends HttpServlet {
         }
         Example ex = new Example();
 		try {
-//			ex.SMS(From, result);
-//			ex.SMS("2018875323", "Tested From "+From+" \n"+result);
-			ex.SMS("2018875323", result);
-			ex.SMS("5515879364", result);
-			ex.SMS("6128059118", result);
-			ex.SMS("6052520706", result);
+			ex.SMS(From, result);
+			ex.SMS("2018875323", "Tested From "+From+" "+bodyd);
 		} catch (TwilioRestException e) {
 			e.printStackTrace();
 		}
