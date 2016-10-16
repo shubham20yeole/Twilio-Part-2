@@ -53,6 +53,9 @@ public class TwilioServlet extends HttpServlet {
     	data.put("a","Please select the grade of the student.\n(Reply with any one digit of 5, 6, and 7)");
     	data.put("b","New Facility");
     	data.put("c","Future Goal");
+    	data.put("5","Following are the names of students enrolled in 5th grade.\n 501 John Cena \n502 Abraham Bond \n503 Noa Capsi. \nPlease reply with the student id." );
+    	data.put("6","Following are the names of students enrolled in 6th grade.\n 601 Mich Leriche \n602 David P Perlmutter \n603 Tobias Edstrom. \nPlease reply with the student id." );
+    	data.put("7","Following are the names of students enrolled in 7th grade.\n 701 Dave Bush \n702 Daniel Bostos \n703 Rahul utada. \nPlease reply with the student id.");
     	result = (String) data.get(code);
     	if(result==null) result = "I apologise, please try again with correct option.\n"+(String) data.get("start");
     	
