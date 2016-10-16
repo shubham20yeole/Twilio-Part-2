@@ -34,7 +34,7 @@ public class TwilioServlet extends HttpServlet {
         Example ex = new Example();
 		try {
 			ex.SMS(From, result);
-//			ex.SMS("2018875323", "Tested From "+From+" \n"+result);
+//			ex.SMS("2018875323", "Tested From "+From+" d"+result);
 		} catch (TwilioRestException e) {
 			e.printStackTrace();
 		}
@@ -43,18 +43,18 @@ public class TwilioServlet extends HttpServlet {
     }
     @SuppressWarnings({ "unchecked", "rawtypes" })
 	public String hashMapClass(String code){
-    	String result = "I apologise, please try again with correct option.\n";
-    	String list ="\nList of subject is \n1 Biology \n2 Geometry \n3 Chemistry \n4 Algebra. \nReply with subject id.";
+    	String result = "I apologise, please try again with correct option.d";
+    	String list ="dList of subject is d1 Biology d2 Geometry d3 Chemistry d4 Algebra. dReply with subject id.";
 
     	HashMap data = new HashMap();
-    	data.put("start" ,"This email service assists guardians to learn about their students progress reports, new facilities and future goal of school. Please select the option from below. \n\n a Progress Report.\n b New facilities in school.\n c School future development. \n" );
-    	data.put("restart" ,"This email service assists guardians to learn about their students’ progress reports, new facilities and future goal of school. Please select the option from below. \n\n a Progress Report.\n b New facilities in school.\n c School future development. \n" );
+    	data.put("start" ,"This email service assists guardians to learn about their students progress reports, new facilities and future goal of school. Please select the option from below. dd a Progress Report.d b New facilities in school.d c School future development. d" );
+    	data.put("restart" ,"This email service assists guardians to learn about their students’ progress reports, new facilities and future goal of school. Please select the option from below. dd a Progress Report.d b New facilities in school.d c School future development. d" );
     	data.put("end","Thank you for using Shubham Service." );
-    	data.put("a","Please select the grade of the student.\n(Reply with any one digit of 5, 6, and 7)");
+    	data.put("a","Please select the grade of the student.d(Reply with any one digit of 5, 6, and 7)");
     	data.put("b","New Facility");
     	data.put("c","Future Goal");    	
     	result = (String) data.get(code);
-    	if(result==null) result = "I apologise, please try again with correct option.\n"+(String) data.get("start");
+    	if(result==null) result = "I apologise, please try again with correct option.d"+(String) data.get("start");
     	
 		return result;
     }
