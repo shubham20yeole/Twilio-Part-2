@@ -47,7 +47,7 @@ public class TwilioServlet extends HttpServlet {
     	String list ="\nList of subject is \n1 Biology \n2 Geometry \n3 Chemistry \n4 Algebra. \nReply with subject id.";
 
     	HashMap data = new HashMap();
-    	data.put("start" ,"This email service assists guardians to learn about their students’ progress reports, new facilities and future goal of school. Please select the option from below. \n\n a Progress Report.\n b New facilities in school.\n c School future development. \n" );
+    	data.put("start" ,"This email service assists guardians to learn about their students progress reports, new facilities and future goal of school. Please select the option from below. \n\n a Progress Report.\n b New facilities in school.\n c School future development. \n" );
     	data.put("restart" ,"This email service assists guardians to learn about their students’ progress reports, new facilities and future goal of school. Please select the option from below. \n\n a Progress Report.\n b New facilities in school.\n c School future development. \n" );
     	data.put("end","Thank you for using Shubham Service." );
     	data.put("a","Please select the grade of the student.\n(Reply with any one digit of 5, 6, and 7)");
