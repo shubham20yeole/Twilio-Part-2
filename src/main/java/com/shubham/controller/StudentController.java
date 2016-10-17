@@ -206,7 +206,7 @@ public class StudentController {
 		Student student = new Student();
 	
 //		map.put("studentList", studentService.getAllStudent());
-		return "dashboard";
+		return "twilio";
 	}
 	
 	@RequestMapping(value="emailAction.do", method = RequestMethod.GET)
