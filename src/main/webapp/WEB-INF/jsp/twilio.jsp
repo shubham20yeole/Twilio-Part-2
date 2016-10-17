@@ -1,4 +1,8 @@
-
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 <style>
@@ -124,6 +128,7 @@
   color: black;
   background:white;
 }
+
 .ArchiveContent 
 {
 
@@ -132,14 +137,32 @@
    color:#003366;
     background: white;
 }
+#container{ 
+	margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+    text-align: center;
+    }
 </style>
 <script>
     $(document).ready(function () {
+        $('#part1').hide();
+        $('#part2').hide();
 
+        $('#part1id').click(function () {
+            $('#part1').show();
+            $('#part2').hide();
+        });
+        $('#part2id').click(function () {
+            $('#part2').show();
+            $('#part1').hide();
+        });
+        var userSize = $("#userSize").val();
         // ANIMATEDLY DISPLAY THE NOTIFICATION COUNTER.
         $('#noti_Counter')
             .css({ opacity: 0 })
-            .text('7')              // ADD DYNAMIC VALUE (YOU CAN EXTRACT DATA FROM DATABASE OR XML).
+            .text(userSize)              // ADD DYNAMIC VALUE (YOU CAN EXTRACT DATA FROM DATABASE OR XML).
             .css({ top: '-10px' })
             .animate({ top: '-2px', opacity: 1 }, 500);
 
@@ -177,8 +200,8 @@
 <body style="margin:0;padding:0;">
     <div>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Find Friends</a></li>
+            <li><a href="#" id="part1id">Twilio part 1</a></li>
+            <li><a href="#" id="part2id">Twilio part 2</a></li>
             <li id="noti_Container">
                 <div id="noti_Counter">
                  
@@ -194,45 +217,21 @@
                     <div style="height:300px;">
                       
                      <div class="FixedHeightArchiveContainer">
+                     <table width="100%">
+   							<tr><th>Name</th>
+   							 <th>Phone</th>
+   							<th>Date</th>
+   							<th>Time</th></tr></table>
                      <div class="ArchiveContent">
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br> SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  SHOW NOTIFICATIONS COUNT<br>
-                  </div></div>
+						<c:forEach var="users" items="${users}">
+   							<table width="100%">
+   							<tr><td> ${users.name}</td>
+   							 <td>${users.phone}</td>
+   							<td> ${users.dateOn}</td>
+   							<td> ${users.timeOn}</td></tr></table>
+						</c:forEach>
+                  	</div>
+                  	</div>
 
                     </div>
                     <div class="seeAll"><a href="#">See All</a></div>
@@ -240,4 +239,9 @@
             </li>
         </ul>
     </div>
+    <input type="hidden" id="userSize" value="${userSize}">
+    <div id="container">
+<div id="part1"><%@ include file="/WEB-INF/jsp/twiliopart1.jsp"%></div>
+<div id="part2"><%@ include file="/WEB-INF/jsp/twiliopart2.jsp"%></div>
+</div>
 </body>

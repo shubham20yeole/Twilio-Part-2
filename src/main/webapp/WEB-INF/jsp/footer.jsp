@@ -1,1 +1,0 @@
-</div></section><footer>&#169; 2016 shubham-maven-spring-hibernate.herokuapp.com/.com | All Rights Reserved. Shubham Yeole, 10 Front ST, Jersey City, NJ 07302, USA</footer>

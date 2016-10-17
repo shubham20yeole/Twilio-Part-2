@@ -45,9 +45,6 @@ public class StudentDaoImpl implements StudentDao {
 	@Transactional
 	public Student login(String loginemail, String logoinpassword) {
 		
-//		return (Student)session.getCurrentSession().get(Student.class, loginemail);
-
-		
 		Query query = session.getCurrentSession().createQuery("from Student where email='"+loginemail+"' AND passcode='"+logoinpassword+"'");
 		System.out.println(query);
 		return (Student) query.uniqueResult();
