@@ -25,18 +25,18 @@ public class TwilioServlet extends HttpServlet {
         String result = hashMapClass(bodyd);
         // Create a TwiML response and add our friendly message.
         TwiMLResponse twiml = new TwiMLResponse();
-        Message sms = new Message(result);
-        try {
-            twiml.append(sms);
-        } catch (TwiMLException e) {
-            e.printStackTrace();
-        }
-//        Example ex = new Example();
-//		try {
-//			ex.SMS(From, result);
-//		} catch (TwilioRestException e) {
-//			e.printStackTrace();
-//		}
+        Message sms = new Message(message);
+//        try {
+//            twiml.append(sms);
+//        } catch (TwiMLException e) {
+//            e.printStackTrace();
+//        }
+        Example ex = new Example();
+		try {
+			ex.SMS(From, result);
+		} catch (TwilioRestException e) {
+			e.printStackTrace();
+		}
         response.setContentType("application/xml");
         response.getWriter().print(twiml.toXML());
     }
