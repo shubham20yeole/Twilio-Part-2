@@ -4,11 +4,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
 
 <style>
     ul {
         display:block;
-        background:#45619D;
+        background: #3B2F63;
         list-style:none;
         margin:0;
         padding:12px 10px;
@@ -69,7 +71,7 @@
     /* THE NOTIFICAIONS WINDOW. THIS REMAINS HIDDEN WHEN THE PAGE LOADS. */
     #notifications {
         display:none;
-        width:430px;
+        width:330px;
         position:absolute;
         top:30px;
         right:0;
@@ -127,23 +129,27 @@
   padding:3px; 
   color: black;
   background:white;
+  font-size: 10px;
 }
 
 .ArchiveContent 
 {
-
   height:90%;
    overflow:auto;
    color:#003366;
     background: white;
+    font-size: 10px;
 }
 #container{ 
+	font-family: 'Bree Serif', serif;
+    background: #efefef;
 	margin: auto;
     width: 50%;
-    border: 3px solid green;
     padding: 10px;
     text-align: center;
     min-height: 400px;
+	box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);
+    
     }
     input[type="text"] {
 	padding: 1% 6% 1% 2%;
@@ -151,11 +157,15 @@
 	 border-radius: 25px;
 	}
 input[type="text"]:focus {
-    border-bottom: 5px solid black;
-    
-
+    border-bottom: 3px solid #3B2F63;
+        background: #fcfcfc;
+        color: #3B2F63;
 }
+body{background: #f7f7f7;}
+.twilio2head{ font-size: 2em;}
+#twilio2dis{padding: 2%;text-align: left; color: #3B2F63; background-color: white; overflow-y: scroll; height:80px; font-size: 1em; font-family: 'Cormorant Garamond', serif;}
 </style>
+<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
 <script>
     $(document).ready(function () {
         $('#part1').hide();
@@ -229,22 +239,16 @@ input[type="text"]:focus {
                       
                      <div class="FixedHeightArchiveContainer">
                      <div class="ArchiveContent">
-                     	<table width="100%">
-                     		<tr>
-                     			<th>Name</th>
-   								<th>Phone</th>
-   								<th>Date</th>
-   								<th>Time</th>
-   							</tr>
+                     	
 						<c:forEach var="users" items="${users}">
+						<table width="100%">
    							<tr>
-   								<td>${users.name}</td>
-   							 	<td>${users.phone}</td>
-   								<td>${users.dateOn}</td>
-   								<td>${users.timeOn}</td>
+   							<td><img src="https://www.drupal.org/files/profile_default.png" width="72" height="72"></td>
+   								<td>${users.name} viewed this SMS service using ${users.phone} on ${users.dateOn} at ${users.timeOn}</td>
    							</tr>
+   						</table>
+   							
 						</c:forEach>
-						</table>
                   	</div>
                   	</div>
 

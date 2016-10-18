@@ -61,15 +61,15 @@ function dr() {
 		<marquee behavior="scroll" direction="left">
 			<img
 				src="https://cdn0.iconfinder.com/data/icons/connection/512/icon-18.png"
-				width="37" height="32"> <span style="font-size: 10px;">Send
-				SMS </span> | <span style="color: red">Format of number should be
+				width="37" height="32"> <span style="font-size: 10px; color: #b7b7b7;">Send
+				SMS </span> | <span style="color: #b7b7b7">Format of number should be
 				like +12018875323</span>
 		</marquee>
 	</p>
 	<div class="scroll font1">
 		<span class="font1" style="font-size: 1.5em; color: #0088cc;">${message}</span>
 		<p style="font-family: 'Pacifico', cursive; font-weight: bold;"></p>
-		<p style="font-size: 1.5em; color: #0088cc;">Please click or check
+		<p style="font-size: 1.5em; color: #2f254f;">Please click or check
 			other if you are a student or just a user.</p>
 
 		<input type="radio" name="gender" class="smschoice" id="drscharff"
