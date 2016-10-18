@@ -25,6 +25,6 @@
 	<form method="POST" action="collectData">
 	<input type="text" name="name" placeholder="Full Name" required><br><br>
 	<input type="text" name="phone" placeholder="Phone Number" required><br><br>
-	<input type="submit" value="submit">
+	<input type="submit" value="Submit">
 	</form>
 </body>

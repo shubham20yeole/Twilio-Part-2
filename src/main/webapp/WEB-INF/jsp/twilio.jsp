@@ -39,7 +39,18 @@
     #noti_Container {
         position:relative;
     }
-       
+
+.footer {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
     /* A CIRCLE LIKE BUTTON IN THE TOP MENU. */
     #noti_Button {
         width:22px;
@@ -303,4 +314,5 @@ font-family: 'Montserrat', sans-serif;
 <div id="part1"><%@ include file="/WEB-INF/jsp/twiliopart1.jsp"%></div>
 <div id="part2"><%@ include file="/WEB-INF/jsp/twiliopart2.jsp"%></div>
 </div>
+<div class="footer">CS 643 Mobile Innovation Course Project <strong>by Shubham Yeole</strong>.</div>
 </body>
