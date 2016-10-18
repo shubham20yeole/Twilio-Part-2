@@ -71,7 +71,7 @@
     /* THE NOTIFICAIONS WINDOW. THIS REMAINS HIDDEN WHEN THE PAGE LOADS. */
     #notifications {
         display:none;
-        width:330px;
+        width:430px;
         position:absolute;
         top:30px;
         right:0;
@@ -161,9 +161,32 @@ input[type="text"]:focus {
         background: #fcfcfc;
         color: #3B2F63;
 }
+input[type="submit"] {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 6px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+     background-color: white;
+    color: black;
+    border: 2px solid #3B2F63;
+}
+
+
+input[type="submit"]:hover {
+    background-color: #3B2F63;
+    color: white;
+}
 body{background: #f7f7f7;}
 .twilio2head{ font-size: 2em;}
-#twilio2dis{padding: 2%;text-align: left; color: #3B2F63; background-color: white; overflow-y: scroll; height:80px; font-size: 1em; font-family: 'Cormorant Garamond', serif;}
+#twilio2dis{padding: 2%;text-align: left; color: #3B2F63; background-color: #f7f7f7; overflow-y: scroll; height:80px; font-size: 1em; font-family: 'Cormorant Garamond', serif;}
 </style>
 <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
 <script>
