@@ -53,7 +53,6 @@
     }
          
     /* THE POPULAR RED NOTIFICATIONS COUNTER. */
-    /* THE POPULAR RED NOTIFICATIONS COUNTER. */
     #noti_Counter {
         display:block;
         position:absolute;
@@ -195,13 +194,20 @@ body{background: #f7f7f7;}
         $('#part1').hide();
         $('#part2').hide();
 
+        $('#homeid').click(function () {
+            $('#part1').hide();
+            $('#part2').hide();
+            $('#home').show();
+        });
         $('#part1id').click(function () {
             $('#part1').show();
             $('#part2').hide();
+            $('#home').hide();
         });
         $('#part2id').click(function () {
             $('#part2').show();
             $('#part1').hide();
+            $('#home').hide();
         });
         var userSize = $("#userSize").val();
         // ANIMATEDLY DISPLAY THE NOTIFICATION COUNTER.
@@ -245,6 +251,7 @@ body{background: #f7f7f7;}
 <body style="margin:0;padding:0;">
     <div>
         <ul>
+            <li><a href="#" id="homeid">HOME</a></li>
             <li><a href="#" id="part1id">Twilio part 1</a></li>
             <li><a href="#" id="part2id">Twilio part 2</a></li>
             <li id="noti_Container">
@@ -284,6 +291,7 @@ body{background: #f7f7f7;}
     </div>
     <input type="hidden" id="userSize" value="${userSize}"><br><br><br>
     <div id="container">
+ <div id="home"><img width="680px" height="400px" src="https://scontent.fewr1-2.fna.fbcdn.net/v/t1.0-9/14725502_1114625415325073_4256083315944297788_n.jpg?oh=ce961346078bc24ef772265c90c42cda&oe=58A5BBC8"></div>
 <div id="part1"><%@ include file="/WEB-INF/jsp/twiliopart1.jsp"%></div>
 <div id="part2"><%@ include file="/WEB-INF/jsp/twiliopart2.jsp"%></div>
 </div>

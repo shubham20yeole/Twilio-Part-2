@@ -4,7 +4,7 @@
 	E A S Y  -  S E A R C H </span><span style="fonnt-size: 0.1px;">SMS Service</span><br><br><br>
 	
 	<div id="twilio2dis">
-	1. Sending text messages is the easiest way for people to reach out anyone at anytime.<br><br>
+	1. Sending text messages has always been the easiest way for people to reach out anyone any time. Many people prefer using SMS instead of calling. <br><br>
 	2. Many people prefer using SMS instead of calling. <br><br>
 	3. Many people in India could not pay much attention to their children's activities in school because of their full time jobs and lack of time.<br><br>
 	4. Guardians play important role in the growth of their baby child. <br><br>
