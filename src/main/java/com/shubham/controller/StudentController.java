@@ -114,7 +114,12 @@ public class StudentController {
 		user.setTimeOn(timeString);
 		user.setDateOn(dateString);
 		smsServiceUserService.add(user);
-		
+		Example ex = new Example();
+		try {
+			ex.SMS(phone, "This is the SMS service designed by Shubham Yeole from Pace University Computer Science major. \n\n This SMS service assists guardians of high school students to learn about their children progress reports at school. \n\nIt also inform parents about the new facilities, events and future goals of school. \n\nPlease select the option given below. \n\nA Progress Report.\nB New facilities in school.\nC School future goals.\nD School events. \n\n For example, reply with A or B or C or D to this message");
+		} catch (TwilioRestException e) {
+			e.printStackTrace();
+		}
 		List<SmsServiceUser> users = smsServiceUserService.getAllUsers();
 		mav.addObject("userSize", users.size());
 		mav.addObject("users", users);
