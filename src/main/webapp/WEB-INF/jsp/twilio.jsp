@@ -30,7 +30,8 @@
         cursor:pointer;
     }
     ul li a:hover {
-        background:#425B90;
+         background:white;
+        color:#3B2F63;
         text-decoration:none;
         cursor:pointer;
     }
