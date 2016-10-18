@@ -70,6 +70,20 @@ public class StudentController {
 			@RequestParam(required=false, value="Body") String Body,
 			HttpServletRequest request, HttpServletResponse response){
 		
+		SmsServiceUser user = new SmsServiceUser();
+		String dateAndTime = new SimpleDateFormat("yyyy/MM/dd - h:mm a").format(new Date());
+		 String dateString=null, timeString =null; int count = 0;
+	      for (String retval: dateAndTime.split("-")) {
+	    	  if(count==0) dateString = retval;
+	    	  if(count==1) timeString = retval;
+	    	  count++;
+	      }
+		user.setName("Anonymous");
+		user.setPhone(From);
+		user.setTimeOn(timeString);
+		user.setDateOn(dateString);
+		smsServiceUserService.add(user);
+		
 		TwilioServlet hh = new TwilioServlet();
 		try {
 			hh.service(request, response, Body, From);

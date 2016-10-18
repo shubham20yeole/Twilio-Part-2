@@ -140,6 +140,8 @@
     background: white;
     font-size: 10px;
 }
+.headingdis{    font-weight: bold; color: #3B2F63;
+ }
 #container{ 
 	font-family: 'Bree Serif', serif;
     background: #efefef;
@@ -186,9 +188,14 @@ input[type="submit"]:hover {
 }
 body{background: #f7f7f7;}
 .twilio2head{ font-size: 2em;}
-#twilio2dis{padding: 2%;text-align: left; color: #3B2F63; background-color: #f7f7f7; overflow-y: scroll; height:80px; font-size: 1em; font-family: 'Cormorant Garamond', serif;}
+#twilio2dis{padding: 2%;text-align: left; color: #756d91; background-color: #f7f7f7; overflow-y: scroll; height:80px; font-size: 0.7em;
+font-family: 'Montserrat', sans-serif;
+
+}
 </style>
 <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
 <script>
     $(document).ready(function () {
         $('#part1').hide();
