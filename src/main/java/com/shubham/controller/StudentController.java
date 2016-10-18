@@ -90,8 +90,8 @@ public class StudentController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		ModelAndView mav = new ModelAndView("sendsms");
-		System.out.println("sms");
+		ModelAndView mav = new ModelAndView("twilio");
+		System.out.println("twilio");
 		return mav;
 	}
 	
