@@ -51,7 +51,8 @@
         margin:-3px 10px 0 10px;
         cursor:pointer;
     }
-        
+         
+    /* THE POPULAR RED NOTIFICATIONS COUNTER. */
     /* THE POPULAR RED NOTIFICATIONS COUNTER. */
     #noti_Counter {
         display:block;
