@@ -143,7 +143,18 @@
     border: 3px solid green;
     padding: 10px;
     text-align: center;
+    min-height: 400px;
     }
+    input[type="text"] {
+	padding: 1% 6% 1% 2%;
+	outline: none;
+	 border-radius: 25px;
+	}
+input[type="text"]:focus {
+    border-bottom: 5px solid black;
+    
+
+}
 </style>
 <script>
     $(document).ready(function () {
@@ -217,19 +228,23 @@
                     <div style="height:300px;">
                       
                      <div class="FixedHeightArchiveContainer">
-                     <table width="100%">
-   							<tr><th>Name</th>
-   							 <th>Phone</th>
-   							<th>Date</th>
-   							<th>Time</th></tr></table>
                      <div class="ArchiveContent">
+                     	<table width="100%">
+                     		<tr>
+                     			<th>Name</th>
+   								<th>Phone</th>
+   								<th>Date</th>
+   								<th>Time</th>
+   							</tr>
 						<c:forEach var="users" items="${users}">
-   							<table width="100%">
-   							<tr><td> ${users.name}</td>
-   							 <td>${users.phone}</td>
-   							<td> ${users.dateOn}</td>
-   							<td> ${users.timeOn}</td></tr></table>
+   							<tr>
+   								<td>${users.name}</td>
+   							 	<td>${users.phone}</td>
+   								<td>${users.dateOn}</td>
+   								<td>${users.timeOn}</td>
+   							</tr>
 						</c:forEach>
+						</table>
                   	</div>
                   	</div>
 
@@ -239,7 +254,7 @@
             </li>
         </ul>
     </div>
-    <input type="hidden" id="userSize" value="${userSize}">
+    <input type="hidden" id="userSize" value="${userSize}"><br><br><br>
     <div id="container">
 <div id="part1"><%@ include file="/WEB-INF/jsp/twiliopart1.jsp"%></div>
 <div id="part2"><%@ include file="/WEB-INF/jsp/twiliopart2.jsp"%></div>

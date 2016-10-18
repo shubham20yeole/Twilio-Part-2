@@ -2,13 +2,13 @@
 
 function ot() {
 	var number = 2;
-    var container = document.getElementById("container");
-    while (container.hasChildNodes()) {
-        container.removeChild(container.lastChild);
+    var container1 = document.getElementById("container1");
+    while (container1.hasChildNodes()) {
+        container1.removeChild(container1.lastChild);
     }
     document.getElementById("drh").innerHTML = "Please enter phone number and message for me.";
     for (i=0;i<number;i++){
-/*         container.appendChild(document.createTextNode("Member " + (i+1)));
+/*         container1.appendChild(document.createTextNode("Member " + (i+1)));
  */        var input = document.createElement("input");
         input.type = "text";
         if(i==0){ 
@@ -20,38 +20,38 @@ function ot() {
             input.placeholder = "Enter message...";
         }
         
-        container.appendChild(input);
-        container.appendChild(document.createElement("br"));
-        container.appendChild(document.createElement("br"));
+        container1.appendChild(input);
+        container1.appendChild(document.createElement("br"));
+        container1.appendChild(document.createElement("br"));
     }
     var input1 = document.createElement("input");
     input1.type = "submit";
     input1.className ="submitbutton submitbutton2";
-    container.appendChild(input1);
+    container1.appendChild(input1);
 }
 function dr() {
 	var number = 1;
-    var container = document.getElementById("container");
-    while (container.hasChildNodes()) {
-        container.removeChild(container.lastChild);
+    var container1 = document.getElementById("container1");
+    while (container1.hasChildNodes()) {
+        container1.removeChild(container1.lastChild);
     }
     document.getElementById("drh").innerHTML = "Dr Scharff will recieve message on following number.";
 
     for (i=0;i<number;i++){
-/*         container.appendChild(document.createTextNode("Member " + (i+1)));
+/*         container1.appendChild(document.createTextNode("Member " + (i+1)));
  */        var input = document.createElement("input");
         input.type = "text";
         input.placeholder = "Enter phone number";
         if(i==0){ input.name = "phone"; input.value = "+19292168151"; }
         if(i==1){ input.name = "msg"; input.value = "My name is Shubham"; }
-        container.appendChild(input);
-        container.appendChild(document.createElement("br"));
-        container.appendChild(document.createElement("br"));
+        container1.appendChild(input);
+        container1.appendChild(document.createElement("br"));
+        container1.appendChild(document.createElement("br"));
     }
     var input1 = document.createElement("input");
     input1.type = "submit";
     input1.className ="submitbutton submitbutton2";
-    container.appendChild(input1);
+    container1.appendChild(input1);
 }
 
 	</script>
@@ -79,7 +79,7 @@ function dr() {
 		<div id="drsec">
 			<p class="heading" id="drh"></p>
 			<form action="sms.do" method="GET">
-				<div id="container"></div>
+				<div id="container1"></div>
 			</form>
 		</div>
 	</div>

@@ -81,12 +81,12 @@ public class StudentController {
 		return mav;
 	}
 	
-	@RequestMapping(value="collectData", method = RequestMethod.GET)
+	@RequestMapping(value="collectData", method = RequestMethod.POST)
 	public ModelAndView serviceUserSubmit(
 			@RequestParam(required=false, value="name") String name,
 			@RequestParam(required=false, value="phone") String phone,
 			HttpServletRequest request){
-		System.out.println("Name "+name);
+		ModelAndView mav = new ModelAndView("redirect:/");
 		String dateAndTime = new SimpleDateFormat("yyyy/MM/dd - h:mm a").format(new Date());
 		 String dateString=null, timeString =null; int count = 0;
 	      for (String retval: dateAndTime.split("-")) {
@@ -100,7 +100,11 @@ public class StudentController {
 		user.setTimeOn(timeString);
 		user.setDateOn(dateString);
 		smsServiceUserService.add(user);
-		return new ModelAndView("twilio");
+		
+		List<SmsServiceUser> users = smsServiceUserService.getAllUsers();
+		mav.addObject("userSize", users.size());
+		mav.addObject("users", users);
+		return mav;
 	}
 
 	@RequestMapping(value="sms.do", method = RequestMethod.GET)
